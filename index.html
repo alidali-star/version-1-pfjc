@@ -1,0 +1,310 @@
+import React, { useState } from 'react';
+
+const GameTracker = () => {
+  const [games] = useState([
+    {
+      id: 1,
+      title: "Genshin Impact",
+      platform: "Multi-plataforma",
+      rating: 5,
+      hours: 480,
+      reviews: 5,
+      completed: true,
+      emoji: "⚔️"
+    },
+    {
+      id: 2,
+      title: "Honkai: Star Rail",
+      platform: "PC • Mobile",
+      rating: 5,
+      hours: 320,
+      reviews: 4,
+      completed: true,
+      emoji: "🌟"
+    },
+    {
+      id: 3,
+      title: "Fate/Grand Order",
+      platform: "iOS • Android",
+      rating: 4,
+      hours: 250,
+      reviews: 3,
+      completed: false,
+      emoji: "🎴"
+    },
+    {
+      id: 4,
+      title: "Arknights",
+      platform: "iOS • Android",
+      rating: 5,
+      hours: 380,
+      reviews: 6,
+      completed: true,
+      emoji: "🎯"
+    },
+    {
+      id: 5,
+      title: "Epic Seven",
+      platform: "Mobile",
+      rating: 4,
+      hours: 210,
+      reviews: 2,
+      completed: false,
+      emoji: "⚡"
+    },
+    {
+      id: 6,
+      title: "Azur Lane",
+      platform: "iOS • Android",
+      rating: 5,
+      hours: 290,
+      reviews: 3,
+      completed: true,
+      emoji: "🌊"
+    }
+  ]);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-[#0F193E] via-[#14204F] to-[#1C3A6F] text-white">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white opacity-20"
+            style={{
+              width: Math.random() * 3 + 'px',
+              height: Math.random() * 3 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+              animation: `twinkle ${Math.random() * 3 + 2}s infinite ${Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Glowing Orbs */}
+      <div className="fixed top-20 left-10 w-96 h-96 bg-[#3C91C4] rounded-full opacity-20 blur-3xl pointer-events-none" />
+      <div className="fixed bottom-20 right-10 w-96 h-96 bg-[#6ACBED] rounded-full opacity-20 blur-3xl pointer-events-none" />
+
+      {/* Navigation */}
+      <nav className="relative z-10 backdrop-blur-md bg-[#0F193E]/80 border-b border-[#3C91C4]/30">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <ul className="flex gap-10 text-sm font-medium">
+              <li>
+                <a href="#biblioteca" className="text-[#B3ECF9] hover:text-[#6ACBED] transition-colors relative group">
+                  Biblioteca
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6ACBED] to-[#3C91C4] group-hover:w-full transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#reseñas" className="text-[#B3ECF9] hover:text-[#6ACBED] transition-colors relative group">
+                  Reseñas
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6ACBED] to-[#3C91C4] group-hover:w-full transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#estadisticas" className="text-[#B3ECF9] hover:text-[#6ACBED] transition-colors relative group">
+                  Estadísticas
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6ACBED] to-[#3C91C4] group-hover:w-full transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#comunidad" className="text-[#B3ECF9] hover:text-[#6ACBED] transition-colors relative group">
+                  Comunidad
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#6ACBED] to-[#3C91C4] group-hover:w-full transition-all duration-300" />
+                </a>
+              </li>
+            </ul>
+            <div className="flex gap-3">
+              <button className="px-6 py-2 rounded-full border-2 border-[#3C91C4] text-[#6ACBED] hover:bg-[#3C91C4]/20 transition-all duration-300 font-semibold text-sm">
+                Buscar
+              </button>
+              <button className="px-6 py-2 rounded-full bg-gradient-to-r from-[#3C91C4] to-[#6ACBED] hover:from-[#6ACBED] hover:to-[#3C91C4] transition-all duration-300 font-semibold text-sm shadow-lg shadow-[#3C91C4]/50">
+                Iniciar Sesión
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative z-10 py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-block mb-6 px-6 py-2 rounded-full border border-[#6ACBED]/50 bg-[#14204F]/50 backdrop-blur-sm">
+            <span className="text-[#6ACBED] text-xs font-bold tracking-widest uppercase">
+              Tu Colección Personal
+            </span>
+          </div>
+          
+          <h1 className="text-7xl font-black mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-[#B3ECF9] via-[#6ACBED] to-[#3C91C4] bg-clip-text text-transparent">
+              DESCUBRE TU
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-[#3C91C4] via-[#6ACBED] to-[#B3ECF9] bg-clip-text text-transparent">
+              BIBLIOTECA GAMING
+            </span>
+          </h1>
+          
+          <p className="text-[#B3ECF9] text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+            Organiza tu colección de gacha games favoritos, escribe reseñas detalladas y lleva el control de tu progreso como jugador. Una plataforma diseñada para verdaderos coleccionistas.
+          </p>
+          
+          <div className="flex gap-4 justify-center">
+            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-[#3C91C4] to-[#6ACBED] font-bold text-base shadow-2xl shadow-[#3C91C4]/50 hover:scale-105 transition-transform duration-300">
+              Explorar Juegos
+            </button>
+            <button className="px-8 py-4 rounded-full border-2 border-[#3C91C4] text-[#6ACBED] font-bold text-base hover:bg-[#3C91C4]/20 transition-all duration-300">
+              Ver Reseñas
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Character Section */}
+      <section className="relative z-10 py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#224C8E]/50 to-[#1C3A6F]/50 backdrop-blur-md border border-[#3C91C4]/30 p-12">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjM0M5MUM0IiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9nPjwvc3ZnPg==')] opacity-30" />
+            
+            <div className="relative flex items-center gap-12">
+              <div className="flex-1">
+                <div className="inline-block mb-4 px-4 py-1 rounded-full bg-[#6ACBED]/20 border border-[#6ACBED]/50">
+                  <span className="text-[#6ACBED] text-xs font-bold uppercase tracking-wider">
+                    Ahora Jugando
+                  </span>
+                </div>
+                <h2 className="text-5xl font-black mb-4 bg-gradient-to-r from-[#B3ECF9] to-[#6ACBED] bg-clip-text text-transparent">
+                  PERSONAJE DESTACADO
+                </h2>
+                <p className="text-[#B3ECF9] text-base mb-6 leading-relaxed">
+                  Envuelto en misterio, emerge una figura de las sombras del pasado. Con ojos que guardan historias sin contar y una presencia que exige atención, traen un poder nunca antes visto.
+                </p>
+                <div className="flex gap-4">
+                  <button className="px-6 py-3 rounded-full bg-[#14204F] border-2 border-[#3C91C4] text-[#6ACBED] font-bold hover:bg-[#3C91C4]/20 transition-all">
+                    Descripción
+                  </button>
+                  <button className="px-6 py-3 rounded-full border-2 border-[#3C91C4]/50 text-[#B3ECF9] font-bold hover:border-[#3C91C4] transition-all">
+                    Ver Detalles
+                  </button>
+                </div>
+              </div>
+              
+              <div className="w-96 h-96 rounded-2xl bg-gradient-to-br from-[#3C91C4]/30 to-[#224C8E]/30 backdrop-blur-sm border border-[#6ACBED]/30 flex items-center justify-center text-9xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F193E] via-transparent to-transparent" />
+                <span className="relative z-10">✨</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Games Grid */}
+      <section id="biblioteca" className="relative z-10 py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-black text-center mb-12 bg-gradient-to-r from-[#B3ECF9] via-[#6ACBED] to-[#3C91C4] bg-clip-text text-transparent">
+            Juegos Populares
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {games.map((game) => (
+              <div
+                key={game.id}
+                className="group relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#224C8E]/30 to-[#1C3A6F]/30 backdrop-blur-md border border-[#3C91C4]/30 hover:border-[#6ACBED] transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-[#3C91C4]/30 cursor-pointer"
+              >
+                <div className="relative h-80 bg-gradient-to-br from-[#3C91C4]/20 to-[#224C8E]/20 flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSIjNkFDQkVEIiBzdHJva2Utd2lkdGg9IjAuNSIgb3BhY2l0eT0iMC4xIi8+PC9nPjwvc3ZnPg==')] opacity-20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F193E] via-transparent to-transparent opacity-60" />
+                  <span className="relative z-10 text-8xl">{game.emoji}</span>
+                  
+                  {game.completed && (
+                    <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-[#6ACBED]/80 backdrop-blur-sm text-xs font-bold text-[#0F193E]">
+                      ✓ Completado
+                    </div>
+                  )}
+                </div>
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-[#B3ECF9] group-hover:text-[#6ACBED] transition-colors">
+                    {game.title}
+                  </h3>
+                  
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex gap-1 text-[#6ACBED]">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-lg">
+                          {i < game.rating ? '★' : '☆'}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="px-3 py-1 rounded-full bg-[#3C91C4]/30 text-[#6ACBED] text-xs font-semibold">
+                      {game.platform}
+                    </span>
+                  </div>
+                  
+                  <div className="flex gap-4 text-sm text-[#B3ECF9]">
+                    <div className="flex items-center gap-1">
+                      <span>⏱</span>
+                      <span>{game.hours}h jugadas</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span>📝</span>
+                      <span>{game.reviews} reseñas</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Character Carousel */}
+      <section className="relative z-10 py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-5xl font-black text-center mb-12 bg-gradient-to-r from-[#B3ECF9] via-[#6ACBED] to-[#3C91C4] bg-clip-text text-transparent">
+            Personajes Destacados
+          </h2>
+          
+          <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide">
+            {['🎴', '⚔️', '🌟', '🎯', '⚡', '🌊', '🔥', '❄️'].map((emoji, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-64 h-80 rounded-2xl bg-gradient-to-br from-[#3C91C4]/30 to-[#224C8E]/30 backdrop-blur-md border border-[#3C91C4]/30 hover:border-[#6ACBED] transition-all duration-300 hover:scale-105 cursor-pointer flex items-center justify-center text-7xl relative overflow-hidden group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F193E] via-transparent to-transparent opacity-60" />
+                <span className="relative z-10 group-hover:scale-110 transition-transform duration-300">{emoji}</span>
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-center">
+                  <p className="text-[#B3ECF9] font-bold">Personaje {i + 1}</p>
+                  <div className="flex justify-center gap-1 text-[#6ACBED] text-xs mt-1">
+                    {'★★★★★'.split('').map((star, j) => <span key={j}>{star}</span>)}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <style jsx>{`
+        @keyframes twinkle {
+          0%, 100% { opacity: 0.2; }
+          50% { opacity: 1; }
+        }
+        
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default GameTracker;
