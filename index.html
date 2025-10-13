@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GameTracker - Tu Biblioteca Gaming</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -15,139 +18,208 @@
     <div class="glow-orb glow-orb-2"></div>
     <div class="glow-orb glow-orb-3"></div>
 
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <div class="logo">GAMETRACKER</div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <ul class="nav-links">
-                <li><a href="#home" class="nav-link active" data-section="home">Home<span class="nav-underline"></span></a></li>
-                <li><a href="#profile" class="nav-link" data-section="profile">Profile<span class="nav-underline"></span></a></li>
-                <li><a href="#character" class="nav-link" data-section="character">Character<span class="nav-underline"></span></a></li>
-                <li><a href="#game" class="nav-link" data-section="game">Game<span class="nav-underline"></span></a></li>
+                <li><a href="#home" class="nav-link active">Home<span class="nav-underline"></span></a></li>
+                <li><a href="#biblioteca" class="nav-link">Biblioteca<span class="nav-underline"></span></a></li>
+                <li><a href="#personajes" class="nav-link">Personajes<span class="nav-underline"></span></a></li>
+                <li><a href="#estadisticas" class="nav-link">Estadísticas<span class="nav-underline"></span></a></li>
             </ul>
             <div class="nav-buttons">
-                <button class="btn-search">Search</button>
-                <button class="btn-info">For more info</button>
+                <button class="btn-search">Buscar</button>
+                <button class="btn-info">Más Info</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <div class="hero-content">
             <div class="hero-badge">NOW LIVE</div>
             <h1 class="hero-title">
-                <span class="gradient-text-1">INTRODUCING</span>
+                <span class="gradient-text-1">BIENVENIDO A</span>
                 <br>
-                <span class="gradient-text-2">NEW CHARACTER</span>
+                <span class="gradient-text-2">GAMETRACKER</span>
             </h1>
             <p class="hero-description">
-                Shrouded in mystery, a shadow emerges from the past. With eyes that hold untold stories 
-                and a presence that commands attention, they bring a power unlike any seen before.
+                Tu plataforma definitiva para organizar, reseñar y explorar videojuegos gacha asiáticos. 
+                Gestiona tu biblioteca personal, escribe reseñas y lleva estadísticas de tu experiencia como gamer.
             </p>
             <div class="hero-buttons">
-                <button class="btn-primary">Description</button>
-                <button class="btn-secondary">Next for detail</button>
+                <button class="btn-primary">Explorar Biblioteca</button>
+                <button class="btn-secondary">Ver Personajes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games Showcase -->
+    <section class="featured-showcase">
+        <h2 class="section-title gradient-text">Juegos Destacados</h2>
+        <div class="showcase-grid">
+            <div class="showcase-item">
+                <div class="showcase-number">01</div>
+                <div class="showcase-image"></div>
+                <h3>Genshin Impact</h3>
+                <p>El RPG gacha más popular del mundo con un impresionante mundo abierto y sistema de combate elemental dinámico</p>
+                <div class="showcase-stats">
+                    <span>★ 5.0</span>
+                    <span>👥 200M+</span>
+                </div>
+            </div>
+            <div class="showcase-item">
+                <div class="showcase-number">02</div>
+                <div class="showcase-image"></div>
+                <h3>Honkai: Star Rail</h3>
+                <p>RPG por turnos con narrativa cinematográfica y combates estratégicos en un universo espacial épico</p>
+                <div class="showcase-stats">
+                    <span>★ 5.0</span>
+                    <span>👥 100M+</span>
+                </div>
+            </div>
+            <div class="showcase-item">
+                <div class="showcase-number">03</div>
+                <div class="showcase-image"></div>
+                <h3>Fate/Grand Order</h3>
+                <p>Sumérgete en la legendaria franquicia Fate con personajes icónicos y una historia profunda</p>
+                <div class="showcase-stats">
+                    <span>★ 4.8</span>
+                    <span>👥 80M+</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Character Carousel -->
-    <section class="character-section">
-        <h3 class="section-title">Character to play</h3>
+    <section class="character-section" id="personajes">
+        <h3 class="section-title gradient-text">Personajes Legendarios</h3>
+        <p class="section-subtitle">Los mejores personajes de los gacha games más populares</p>
+        
         <div class="character-carousel">
             <div class="character-card" style="background: linear-gradient(to bottom right, #ec4899, #a855f7)">
-                <div class="character-overlay"></div>
-                <span class="character-emoji">👩‍🎤</span>
-                <p class="character-name">Asuka Renjou</p>
+                <div class="character-image"></div>
+                <div class="character-overlay">
+                    <p class="character-name">Asuka Renjou</p>
+                    <p class="character-game">Honkai Impact 3rd</p>
+                    <p class="character-role">⚔ DPS</p>
+                </div>
                 <div class="character-rarity">★★★★★</div>
             </div>
             
             <div class="character-card" style="background: linear-gradient(to bottom right, #2563eb, #06b6d4)">
-                <div class="character-overlay"></div>
-                <span class="character-emoji">👨‍🎤</span>
-                <p class="character-name">Takeru Hoshino</p>
+                <div class="character-image"></div>
+                <div class="character-overlay">
+                    <p class="character-name">Takeru Hoshino</p>
+                    <p class="character-game">Honkai: Star Rail</p>
+                    <p class="character-role">🛡 Tank</p>
+                </div>
                 <div class="character-rarity">★★★★★</div>
             </div>
             
             <div class="character-card character-featured" style="background: linear-gradient(to bottom right, #22d3ee, #3b82f6)">
-                <div class="character-overlay"></div>
-                <span class="character-emoji featured">🧝‍♀️</span>
-                <p class="character-name">Lyara Veylith Arata</p>
-                <span class="character-subtitle">Ice Crystal Protector</span>
+                <div class="character-image"></div>
+                <div class="character-overlay">
+                    <p class="character-name">Lyara Veylith Arata</p>
+                    <p class="character-game">Tower of Fantasy</p>
+                    <p class="character-subtitle">❄ Ice Crystal Protector</p>
+                    <p class="character-role">💫 Support</p>
+                </div>
                 <div class="character-rarity">★★★★★</div>
+                <div class="featured-badge">DESTACADO</div>
             </div>
             
             <div class="character-card" style="background: linear-gradient(to bottom right, #374151, #1d4ed8)">
-                <div class="character-overlay"></div>
-                <span class="character-emoji">🥷</span>
-                <p class="character-name">Shiro Kazama</p>
+                <div class="character-image"></div>
+                <div class="character-overlay">
+                    <p class="character-name">Shiro Kazama</p>
+                    <p class="character-game">Punishing: Gray Raven</p>
+                    <p class="character-role">🗡 Assassin</p>
+                </div>
                 <div class="character-rarity">★★★★</div>
             </div>
             
             <div class="character-card" style="background: linear-gradient(to bottom right, #a855f7, #f472b6)">
-                <div class="character-overlay"></div>
-                <span class="character-emoji">👸</span>
-                <p class="character-name">Kaede Kisaragi</p>
+                <div class="character-image"></div>
+                <div class="character-overlay">
+                    <p class="character-name">Kaede Kisaragi</p>
+                    <p class="character-game">Princess Connect! Re:Dive</p>
+                    <p class="character-role">💗 Healer</p>
+                </div>
                 <div class="character-rarity">★★★★★</div>
             </div>
         </div>
     </section>
 
     <!-- Dashboard Section -->
-    <section class="dashboard-section">
+    <section class="dashboard-section" id="estadisticas">
         <div class="dashboard-grid">
             <!-- Recent Games -->
             <div class="dashboard-card">
                 <h2 class="card-title gradient-text">Juegos Recientes</h2>
                 <div class="recent-games">
                     <div class="recent-game-item">
-                        <div class="game-icon">🎌</div>
+                        <div class="game-icon"></div>
                         <div class="game-info">
                             <h3 class="game-title">Ghost of Tsushima</h3>
-                            <p class="game-platform">PS5</p>
+                            <p class="game-platform">PS5 • Acción/Aventura</p>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 75%"></div>
                             </div>
+                            <span class="progress-text">75% completado</span>
                         </div>
-                        <div class="game-status status-playing">▶️</div>
+                        <div class="game-status status-playing">▶</div>
                     </div>
                     
                     <div class="recent-game-item">
-                        <div class="game-icon">⚔️</div>
+                        <div class="game-icon"></div>
                         <div class="game-info">
                             <h3 class="game-title">Final Fantasy XVI</h3>
-                            <p class="game-platform">PS5</p>
+                            <p class="game-platform">PS5 • RPG</p>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 0%"></div>
                             </div>
+                            <span class="progress-text">Por empezar</span>
                         </div>
-                        <div class="game-status status-add">➕</div>
+                        <div class="game-status status-add">+</div>
                     </div>
                     
                     <div class="recent-game-item">
-                        <div class="game-icon">🌃</div>
+                        <div class="game-icon"></div>
                         <div class="game-info">
                             <h3 class="game-title">Cyberpunk 2077</h3>
-                            <p class="game-platform">PC</p>
+                            <p class="game-platform">PC • RPG/Acción</p>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 100%"></div>
                             </div>
+                            <span class="progress-text">¡Completado!</span>
                         </div>
-                        <div class="game-status status-completed">✅</div>
+                        <div class="game-status status-completed">✓</div>
                     </div>
                 </div>
             </div>
 
             <!-- Statistics -->
             <div class="dashboard-card">
-                <h2 class="card-title gradient-text">Estadísticas</h2>
+                <h2 class="card-title gradient-text">Mis Estadísticas</h2>
                 
                 <!-- Completion Circle -->
                 <div class="stats-completion">
                     <div class="completion-circle">
                         <svg class="circle-svg" viewBox="0 0 128 128">
+                            <defs>
+                                <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#00D4FF;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#00FFCC;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
                             <circle cx="64" cy="64" r="56" class="circle-background"/>
-                            <circle cx="64" cy="64" r="56" class="circle-progress" style="stroke-dashoffset: 110"/>
+                            <circle cx="64" cy="64" r="56" class="circle-progress"/>
                         </svg>
                         <div class="circle-text">
                             <span class="percentage">58%</span>
@@ -155,25 +227,26 @@
                     </div>
                     <div class="completion-info">
                         <p class="info-label">Juegos<br>Completados</p>
-                        <p class="info-detail">7/12 juegos</p>
+                        <p class="info-detail">7 de 12 juegos</p>
                     </div>
                 </div>
 
                 <!-- Genre Chart -->
                 <div class="stats-chart">
+                    <h4 class="chart-title">Géneros Favoritos</h4>
                     <div class="chart-bars">
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 160px; background: linear-gradient(to top, #6ACBED, #6ACBEDdd)">
+                            <div class="chart-bar" style="height: 160px; background: linear-gradient(to top, #00D4FF, #66E0FF)">
                                 <span class="bar-value">5</span>
                             </div>
                         </div>
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 128px; background: linear-gradient(to top, #3C91C4, #3C91C4dd)">
+                            <div class="chart-bar" style="height: 128px; background: linear-gradient(to top, #0099CC, #00D4FF)">
                                 <span class="bar-value">4</span>
                             </div>
                         </div>
                         <div class="chart-bar-wrapper">
-                            <div class="chart-bar" style="height: 96px; background: linear-gradient(to top, #B3ECF9, #B3ECF9dd)">
+                            <div class="chart-bar" style="height: 96px; background: linear-gradient(to top, #00FFCC, #66E0FF)">
                                 <span class="bar-value">3</span>
                             </div>
                         </div>
@@ -188,10 +261,12 @@
                 <!-- Additional Stats -->
                 <div class="stats-grid">
                     <div class="stat-box">
+                        <span class="stat-icon">⏱</span>
                         <p class="stat-number">2150</p>
                         <p class="stat-label">Horas Totales</p>
                     </div>
                     <div class="stat-box">
+                        <span class="stat-icon">★</span>
                         <p class="stat-number">4.6</p>
                         <p class="stat-label">Rating Promedio</p>
                     </div>
@@ -204,11 +279,16 @@
     <section class="pending-section">
         <div class="pending-container">
             <h2 class="section-title gradient-text">Lista de Pendientes</h2>
+            <p class="section-subtitle">Juegos que quiero probar próximamente</p>
+            
             <div class="pending-list">
                 <div class="pending-item" onclick="togglePending(this)">
                     <div class="pending-left">
                         <div class="checkbox"></div>
-                        <span class="pending-title">The Witcher 3</span>
+                        <div class="pending-info">
+                            <span class="pending-title">The Witcher 3: Wild Hunt</span>
+                            <span class="pending-platform">PC • PS5 • Xbox</span>
+                        </div>
                     </div>
                     <div class="checkbox-right"></div>
                 </div>
@@ -216,7 +296,10 @@
                 <div class="pending-item" onclick="togglePending(this)">
                     <div class="pending-left">
                         <div class="checkbox"></div>
-                        <span class="pending-title">Elden Ring</span>
+                        <div class="pending-info">
+                            <span class="pending-title">Elden Ring</span>
+                            <span class="pending-platform">Multi-plataforma</span>
+                        </div>
                     </div>
                     <div class="checkbox-right"></div>
                 </div>
@@ -224,34 +307,56 @@
                 <div class="pending-item checked" onclick="togglePending(this)">
                     <div class="pending-left">
                         <div class="checkbox checked">✓</div>
-                        <span class="pending-title">Hollow Knight</span>
+                        <div class="pending-info">
+                            <span class="pending-title">Hollow Knight</span>
+                            <span class="pending-platform">PC • Switch</span>
+                        </div>
                     </div>
                     <div class="checkbox-right checked"></div>
                 </div>
             </div>
+
+            <button class="btn-add-pending" onclick="addPendingGame()">
+                + Agregar Nuevo Juego
+            </button>
         </div>
     </section>
 
     <!-- Game Library -->
-    <section class="library-section">
-        <h2 class="section-title gradient-text">Biblioteca de Juegos</h2>
-        <div class="games-grid">
-            <div class="game-card">
-                <div class="game-card-image" style="background: linear-gradient(to bottom right, #9333ea, #ec4899)">
+    <section class="library-section" id="biblioteca">
+        <h2 class="section-title gradient-text">Biblioteca de Juegos Gacha</h2>
+        <p class="section-subtitle">Mi colección personal de gacha games asiáticos</p>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGames('all')">Todos</button>
+            <button class="filter-btn" onclick="filterGames('completed')">Completados</button>
+            <button class="filter-btn" onclick="filterGames('playing')">Jugando</button>
+            <button class="filter-btn" onclick="filterGames('pending')">Pendientes</button>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <!-- Genshin Impact -->
+            <div class="game-card" data-status="completed" data-genre="rpg-gacha">
+                <div class="game-card-image">
                     <div class="game-overlay"></div>
-                    <span class="game-emoji">⚔️</span>
                     <div class="game-badge completed">✓ Completado</div>
                     <div class="game-genre">RPG Gacha</div>
                 </div>
                 <div class="game-card-content">
                     <h3 class="game-card-title">Genshin Impact</h3>
+                    <p class="game-description">
+                        Explora el mundo de Teyvat en este RPG de mundo abierto con sistema gacha. 
+                        Colecciona personajes elementales y descubre una historia épica.
+                    </p>
                     <div class="game-meta">
-                        <div class="game-rating">★★★★★</div>
+                        <div class="game-rating" title="5 de 5 estrellas">★★★★★</div>
                         <span class="game-platform">Multi-plataforma</span>
                     </div>
                     <div class="game-stats">
-                        <span>⏱ 480h jugadas</span>
-                        <span>📝 5 reseñas</span>
+                        <span title="Horas jugadas">⏱ 480h</span>
+                        <span title="Reseñas">📝 5</span>
+                        <span title="Último acceso">📅 Hoy</span>
                     </div>
                 </div>
                 <div class="game-hover-overlay">
@@ -259,22 +364,27 @@
                 </div>
             </div>
 
-            <div class="game-card">
-                <div class="game-card-image" style="background: linear-gradient(to bottom right, #3b82f6, #22d3ee)">
+            <!-- Honkai: Star Rail -->
+            <div class="game-card" data-status="completed" data-genre="rpg-turnos">
+                <div class="game-card-image">
                     <div class="game-overlay"></div>
-                    <span class="game-emoji">🌟</span>
                     <div class="game-badge completed">✓ Completado</div>
                     <div class="game-genre">RPG Turn-Based</div>
                 </div>
                 <div class="game-card-content">
                     <h3 class="game-card-title">Honkai: Star Rail</h3>
+                    <p class="game-description">
+                        Embárcate en una aventura galáctica con combates por turnos estratégicos. 
+                        Narrativa cinematográfica y personajes memorables.
+                    </p>
                     <div class="game-meta">
                         <div class="game-rating">★★★★★</div>
                         <span class="game-platform">PC • Mobile</span>
                     </div>
                     <div class="game-stats">
-                        <span>⏱ 320h jugadas</span>
-                        <span>📝 4 reseñas</span>
+                        <span>⏱ 320h</span>
+                        <span>📝 4</span>
+                        <span>📅 Hace 2 días</span>
                     </div>
                 </div>
                 <div class="game-hover-overlay">
@@ -282,21 +392,26 @@
                 </div>
             </div>
 
-            <div class="game-card">
-                <div class="game-card-image" style="background: linear-gradient(to bottom right, #ef4444, #f97316)">
+            <!-- Fate/Grand Order -->
+            <div class="game-card" data-status="playing" data-genre="rpg-gacha">
+                <div class="game-card-image">
                     <div class="game-overlay"></div>
-                    <span class="game-emoji">🎴</span>
                     <div class="game-genre">RPG Gacha</div>
                 </div>
                 <div class="game-card-content">
                     <h3 class="game-card-title">Fate/Grand Order</h3>
+                    <p class="game-description">
+                        Convoca a héroes legendarios en esta aventura basada en la franquicia Fate. 
+                        Rica historia y sistema de combate estratégico.
+                    </p>
                     <div class="game-meta">
                         <div class="game-rating">★★★★☆</div>
                         <span class="game-platform">iOS • Android</span>
                     </div>
                     <div class="game-stats">
-                        <span>⏱ 250h jugadas</span>
-                        <span>📝 3 reseñas</span>
+                        <span>⏱ 250h</span>
+                        <span>📝 3</span>
+                        <span>📅 Hace 1 semana</span>
                     </div>
                 </div>
                 <div class="game-hover-overlay">
@@ -304,22 +419,27 @@
                 </div>
             </div>
 
-            <div class="game-card">
-                <div class="game-card-image" style="background: linear-gradient(to bottom right, #4b5563, #2563eb)">
+            <!-- Arknights -->
+            <div class="game-card" data-status="completed" data-genre="tower-defense">
+                <div class="game-card-image">
                     <div class="game-overlay"></div>
-                    <span class="game-emoji">🎯</span>
                     <div class="game-badge completed">✓ Completado</div>
                     <div class="game-genre">Tower Defense</div>
                 </div>
                 <div class="game-card-content">
                     <h3 class="game-card-title">Arknights</h3>
+                    <p class="game-description">
+                        Tower defense estratégico con personajes únicos y profunda historia. 
+                        Desafía tu ingenio en cada batalla táctica.
+                    </p>
                     <div class="game-meta">
                         <div class="game-rating">★★★★★</div>
                         <span class="game-platform">iOS • Android</span>
                     </div>
                     <div class="game-stats">
-                        <span>⏱ 380h jugadas</span>
-                        <span>📝 6 reseñas</span>
+                        <span>⏱ 380h</span>
+                        <span>📝 6</span>
+                        <span>📅 Hace 3 días</span>
                     </div>
                 </div>
                 <div class="game-hover-overlay">
@@ -327,21 +447,26 @@
                 </div>
             </div>
 
-            <div class="game-card">
-                <div class="game-card-image" style="background: linear-gradient(to bottom right, #eab308, #ef4444)">
+            <!-- Epic Seven -->
+            <div class="game-card" data-status="playing" data-genre="rpg">
+                <div class="game-card-image">
                     <div class="game-overlay"></div>
-                    <span class="game-emoji">⚡</span>
                     <div class="game-genre">RPG</div>
                 </div>
                 <div class="game-card-content">
                     <h3 class="game-card-title">Epic Seven</h3>
+                    <p class="game-description">
+                        RPG coreano con impresionantes animaciones 2D. Sistema de combate dinámico 
+                        y colección de héroes épicos.
+                    </p>
                     <div class="game-meta">
                         <div class="game-rating">★★★★☆</div>
                         <span class="game-platform">Mobile</span>
                     </div>
                     <div class="game-stats">
-                        <span>⏱ 210h jugadas</span>
-                        <span>📝 2 reseñas</span>
+                        <span>⏱ 210h</span>
+                        <span>📝 2</span>
+                        <span>📅 Hace 5 días</span>
                     </div>
                 </div>
                 <div class="game-hover-overlay">
@@ -349,22 +474,27 @@
                 </div>
             </div>
 
-            <div class="game-card">
-                <div class="game-card-image" style="background: linear-gradient(to bottom right, #60a5fa, #2dd4bf)">
+            <!-- Azur Lane -->
+            <div class="game-card" data-status="completed" data-genre="shoot-em-up">
+                <div class="game-card-image">
                     <div class="game-overlay"></div>
-                    <span class="game-emoji">🌊</span>
                     <div class="game-badge completed">✓ Completado</div>
                     <div class="game-genre">Shoot 'em up</div>
                 </div>
                 <div class="game-card-content">
                     <h3 class="game-card-title">Azur Lane</h3>
+                    <p class="game-description">
+                        Juego de disparos con personificaciones de barcos de guerra. 
+                        Combina estrategia naval con elementos gacha.
+                    </p>
                     <div class="game-meta">
                         <div class="game-rating">★★★★★</div>
                         <span class="game-platform">iOS • Android</span>
                     </div>
                     <div class="game-stats">
-                        <span>⏱ 290h jugadas</span>
-                        <span>📝 3 reseñas</span>
+                        <span>⏱ 290h</span>
+                        <span>📝 3</span>
+                        <span>📅 Hace 1 semana</span>
                     </div>
                 </div>
                 <div class="game-hover-overlay">
@@ -372,6 +502,10 @@
                 </div>
             </div>
         </div>
+
+        <button class="btn-load-more" onclick="loadMoreGames()">
+            Cargar Más Juegos
+        </button>
     </section>
 
     <!-- Footer -->
@@ -381,15 +515,22 @@
                 <div class="footer-column">
                     <h3 class="footer-title">GameTracker</h3>
                     <p class="footer-description">
-                        Tu plataforma definitiva para organizar, reseñar y explorar videojuegos gacha.
+                        Tu plataforma definitiva para organizar, reseñar y explorar videojuegos gacha asiáticos. 
+                        Gestiona tu biblioteca y comparte tu experiencia gaming.
                     </p>
+                    <div class="social-links">
+                        <a href="#" title="Discord">DC</a>
+                        <a href="#" title="Twitter">TW</a>
+                        <a href="#" title="Reddit">RD</a>
+                        <a href="#" title="YouTube">YT</a>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h4 class="footer-heading">Enlaces Rápidos</h4>
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#biblioteca">Biblioteca</a></li>
-                        <li><a href="#reseñas">Reseñas</a></li>
+                        <li><a href="#personajes">Personajes</a></li>
                         <li><a href="#estadisticas">Estadísticas</a></li>
                     </ul>
                 </div>
@@ -413,8 +554,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 GameTracker. Proyecto Final - Todos los derechos reservados.</p>
-                <p class="footer-tagline">Hecho con ❤️ para amantes de los gacha games</p>
+                <p>© 2025 GameTracker. Proyecto personal de gestión de videojuegos.</p>
             </div>
         </div>
     </footer>
